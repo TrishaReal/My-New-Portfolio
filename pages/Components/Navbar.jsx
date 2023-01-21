@@ -6,7 +6,7 @@ const Navbar = () => {
             <nav className='navbar header-nav navbar-expand-lg one-page-nav'>
                 <div className='container'>
                     <a className='navbar-brand' href='#'>
-                        <img src='assets/img/logo.svg' title='' alt='' />
+                        <p className='logo'>TSreal</p>
                     </a>
 
                     <button

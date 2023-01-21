@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
                     content='Boston - Portfolio Template'
                 />
 
-                <title>Boston - Portfolio Template</title>
+                <title>Trisha Sairene Real</title>
 
                 <link
                     rel='shortcut icon'
@@ -29,6 +29,16 @@ const Layout = ({ children }) => {
                     href='favicon.ico'
                 />
 
+                <link rel='preconnect' href='https://fonts.googleapis.com' />
+                <link
+                    rel='preconnect'
+                    href='https://fonts.gstatic.com'
+                    crossorigin
+                />
+                <link
+                    href='https://fonts.googleapis.com/css2?family=Comforter&display=swap'
+                    rel='stylesheet'
+                />
                 <link href='assets/css/style.css' rel='stylesheet' />
             </Head>
 

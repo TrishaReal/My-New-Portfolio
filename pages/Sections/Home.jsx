@@ -14,18 +14,17 @@ const Home = () => {
                     <div className='col-lg-6 pe-xl-5 py-5'>
                         <div className='home-intro one-page-nav'>
                             <h6>
-                                <span>Hello.</span>
+                                <span>Ciao!</span>
                             </h6>
-                            <h1>
-                                We Have <br />
-                                Design
-                                <br />
-                                Experience
-                            </h1>
+                            <h2>Mi chiamo</h2>
+                            <h1>Trisha Sairene Real</h1>
                             <p>
-                                I design and develop services for customers of
-                                all sizes, specializing in creating stylish,
-                                modern websites, web services and online stores.
+                                Una persona intraprendente con grande volontà di
+                                fare nuove esperienze. Socievole, riflessiva,
+                                sempre pronta ad ogni sfida e ama imparare.
+                                Esprime le proprie emozioni attraverso la
+                                creatività accompagnata anche dalla passione per
+                                l'arte, l'informatica e la tecnologia.
                             </p>
                             <div className='btn-bar'>
                                 <a
@@ -33,7 +32,7 @@ const Home = () => {
                                     data-scroll-nav='4'
                                     href='#contactus'
                                 >
-                                    Let’s Talk
+                                    Contattami
                                 </a>
                             </div>
                         </div>
