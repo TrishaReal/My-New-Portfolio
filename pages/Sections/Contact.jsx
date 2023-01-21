@@ -1,6 +1,24 @@
 import React from 'react';
 
 const Contact = () => {
+    const contactData = [
+        {
+            title: 'Phone',
+            info: '(+39) 327 407 3331',
+            icon: 'fas fa-envelope',
+        },
+        {
+            title: 'Email',
+            info: 'trishasairenereal@gmail.com',
+            icon: 'fas fa-phone-alt',
+        },
+        {
+            title: 'Location',
+            info: 'Cagliari, Sardegna, Italy',
+            icon: 'fas fa-map-marker-alt',
+        },
+    ];
+
     return (
         <section
             data-scroll-index='4'
@@ -11,10 +29,10 @@ const Contact = () => {
                 <div className='row section-heading'>
                     <div className='col-lg-6'>
                         <h6>
-                            <span>Contact</span>
+                            <span>Contattami!</span>
                         </h6>
                         <h3>
-                            <span>Let's Discuss Project</span>
+                            <span>Progetti in mente?</span>
                         </h3>
                     </div>
                 </div>
@@ -101,36 +119,19 @@ const Contact = () => {
                     </div>
                     <div className='col-lg-5 ms-auto col-xl-4 pt-5 pt-lg-0'>
                         <ul className='contact-infos'>
-                            <li>
-                                <div className='icon'>
-                                    <i className='fas fa-envelope'></i>
-                                </div>
-                                <div className='col'>
-                                    <h5>Phone</h5>
-                                    <p>+01 123 654 8096</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='icon'>
-                                    <i className='fas fa-phone-alt'></i>
-                                </div>
-                                <div className='col'>
-                                    <h5>Mail</h5>
-                                    <p>info@domainname.com</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='icon'>
-                                    <i className='fas fa-map-marker-alt'></i>
-                                </div>
-                                <div className='col'>
-                                    <h5>Visit My Studio</h5>
-                                    <p>
-                                        Warnwe Park Streetperrine, <br />
-                                        FL 33157 New York City
-                                    </p>
-                                </div>
-                            </li>
+                            {contactData.map((val, key) => {
+                                return (
+                                    <li key={key}>
+                                        <div className='icon'>
+                                            <i className={val.icon}></i>
+                                        </div>
+                                        <div className='col'>
+                                            <h5>{val.title}</h5>
+                                            <p>{val.info}</p>
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ul>
                         <div className='text-center pt-5'>
                             <img src='assets/img/contact.svg' title='' alt='' />
