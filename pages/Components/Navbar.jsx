@@ -1,12 +1,41 @@
 import React from 'react';
+import Languages from './Languages';
 
 const Navbar = () => {
+    const menuData = [
+        {
+            title: 'Home',
+            link: '#',
+            dataScroll: '0',
+        },
+        {
+            title: 'Skills',
+            link: '#skills-education-experience',
+            dataScroll: '1',
+        },
+        {
+            title: 'Portfolio',
+            link: '#projects',
+            dataScroll: '2',
+        },
+        {
+            title: 'Contact',
+            link: '#contact',
+            dataScroll: '3',
+        },
+    ];
+
     return (
         <header className='main-header'>
             <nav className='navbar header-nav navbar-expand-lg one-page-nav'>
                 <div className='container'>
-                    <a className='navbar-brand' href='#'>
-                        <p className='logo'>TSreal</p>
+                    {/* <Languages /> */}
+                    <a class='navbar-brand' href='#'>
+                        <img
+                            src='assets/img/logo/logo02.png'
+                            title='Trisha Sairene Real'
+                            alt='My Logo'
+                        />
                     </a>
 
                     <button
@@ -28,61 +57,31 @@ const Navbar = () => {
                         id='navbar-collapse-toggle'
                     >
                         <ul className='navbar-nav mx-auto'>
-                            <li>
-                                <a
-                                    className='nav-link'
-                                    data-scroll-nav='0'
-                                    href='#home'
-                                >
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='nav-link'
-                                    data-scroll-nav='1'
-                                    href='#services'
-                                >
-                                    <span>Services</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='nav-link'
-                                    data-scroll-nav='2'
-                                    href='#skill'
-                                >
-                                    <span>Skills</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='nav-link'
-                                    data-scroll-nav='3'
-                                    href='#work'
-                                >
-                                    <span>Portfolio</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='nav-link'
-                                    data-scroll-nav='4'
-                                    href='#contactus'
-                                >
-                                    <span>Contact</span>
-                                </a>
-                            </li>
+                            {menuData.map((val, key) => {
+                                return (
+                                    <li key={key}>
+                                        <a
+                                            className='nav-link'
+                                            data-scroll-nav={val.dataScroll}
+                                            href={val.link}
+                                            title={val.title}
+                                        >
+                                            <span>{val.title}</span>
+                                        </a>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
 
-                    <div className='ms-auto d-none d-lg-block'>
+                    <div className='ms-auto d-none d-lg-block right-btns'>
                         <a
                             className='px-btn px-btn-theme2'
                             data-scroll-nav='4'
-                            href='#contactus'
+                            href='#contact'
+                            title='Contattami'
                         >
-                            Contact Now
+                            Contatti
                         </a>
                     </div>
                 </div>

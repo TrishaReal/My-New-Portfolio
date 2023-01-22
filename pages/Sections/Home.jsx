@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <section data-scroll-index='0' className='home-section'>
+        <section id='#' data-scroll-index='0' className='home-section '>
             <div className='effect-1'>
                 <img src='assets/img/effect-1.svg' title='' alt='' />
             </div>
@@ -16,7 +16,7 @@ const Home = () => {
                             <h6>
                                 <span>Ciao!</span>
                             </h6>
-                            <h2>Mi chiamo</h2>
+                            <h2>Piacere, sono</h2>
                             <h1>Trisha Sairene Real</h1>
                             <p>
                                 Una persona intraprendente con grande volontà di
@@ -30,7 +30,7 @@ const Home = () => {
                                 <a
                                     className='px-btn px-btn-theme'
                                     data-scroll-nav='4'
-                                    href='#contactus'
+                                    href='#contact'
                                 >
                                     Contattami
                                 </a>

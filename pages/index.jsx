@@ -1,5 +1,5 @@
 import Home from './Sections/Home';
-import Resume from './Sections/Resume';
+import Skills from './Sections/Skills';
 import Portfolio from './Sections/Portfolio';
 import Contact from './Sections/Contact';
 
@@ -8,7 +8,7 @@ const AppIndex = () => {
         <main class='wrapper'>
             <Home />
 
-            <Resume />
+            <Skills />
             <Portfolio />
             <Contact />
             <div className='right-effects'></div>

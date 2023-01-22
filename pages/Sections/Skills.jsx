@@ -96,7 +96,11 @@ const Resume = () => {
     ];
 
     return (
-        <section data-scroll-index='2' className='section experience-section'>
+        <section
+            id='skills-education-experience'
+            data-scroll-index='2'
+            className='section experience-section  gradient-bottom '
+        >
             <div className='container'>
                 <div className='row'>
                     <div className='col-lg-6'>
@@ -202,7 +206,7 @@ const Resume = () => {
                                     alt=''
                                 />
                             </div>
-                            <a className='px-btn px-btn-theme2' href='#'>
+                            <a className='px-btn px-btn-theme2' href='#contact'>
                                 Hire me
                             </a>
                         </div>

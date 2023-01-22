@@ -22,8 +22,8 @@ const Contact = () => {
     return (
         <section
             data-scroll-index='4'
-            id='contactus'
-            className='section contactus-section bg-gray'
+            id='contact'
+            className='section contactus-section gradient-top '
         >
             <div className='container'>
                 <div className='row section-heading'>
@@ -39,21 +39,19 @@ const Contact = () => {
                 <div className='row'>
                     <div className='col-lg-6'>
                         <div className='contact-form'>
-                            <h6>Get in touch</h6>
-                            <p className='lead'>
-                                Our friendly team would love to hear from you.
-                            </p>
+                            <h6>Inviami un'email</h6>
+                            <p className='lead'>testo</p>
                             <form id='contact-form' method='POST'>
                                 <div className='row gx-3 gy-4'>
                                     <div className='col-md-6'>
                                         <div className='form-group'>
                                             <label className='form-label'>
-                                                First name
+                                                Nome
                                             </label>
                                             <input
                                                 name='Name'
                                                 id='name'
-                                                placeholder='Name *'
+                                                placeholder='Nome *'
                                                 className='form-control'
                                                 type='text'
                                             />
@@ -62,7 +60,21 @@ const Contact = () => {
                                     <div className='col-md-6'>
                                         <div className='form-group'>
                                             <label className='form-label'>
-                                                Your Email
+                                                Cognome
+                                            </label>
+                                            <input
+                                                name='Name'
+                                                id='name'
+                                                placeholder='Cognome *'
+                                                className='form-control'
+                                                type='text'
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='form-group'>
+                                            <label className='form-label'>
+                                                Email
                                             </label>
                                             <input
                                                 name='Email'
@@ -73,29 +85,15 @@ const Contact = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div className='col-12'>
-                                        <div className='form-group'>
-                                            <label className='form-label'>
-                                                Subject
-                                            </label>
-                                            <input
-                                                name='Subject'
-                                                id='subject'
-                                                placeholder='Subject *'
-                                                className='form-control'
-                                                type='text'
-                                            />
-                                        </div>
-                                    </div>
                                     <div className='col-md-12'>
                                         <div className='form-group'>
                                             <label className='form-label'>
-                                                Your message
+                                                Il tuo messaggio
                                             </label>
                                             <textarea
                                                 name='message'
                                                 id='message'
-                                                placeholder='Your message *'
+                                                placeholder='Scrivi un messaggio *'
                                                 rows='4'
                                                 className='form-control'
                                             ></textarea>
