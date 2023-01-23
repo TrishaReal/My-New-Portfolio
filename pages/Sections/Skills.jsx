@@ -4,43 +4,43 @@ const Resume = () => {
     const skillsData = [
         {
             title: 'HTML',
-            iconSrc: 'assets/img/html.png',
+            iconSrc: 'assets/img/skills-icons/html_b.png',
         },
         {
             title: 'CSS',
-            iconSrc: 'assets/img/css.png',
+            iconSrc: 'assets/img/skills-icons/css_b.png',
         },
         {
             title: 'Javascript',
-            iconSrc: 'assets/img/js.png',
+            iconSrc: 'assets/img/skills-icons/js_b.png',
         },
         {
             title: 'jQuery',
-            iconSrc: 'assets/img/jquery.png',
+            iconSrc: 'assets/img/skills-icons/jquery_b.png',
         },
         {
             title: 'React JS',
-            iconSrc: 'assets/img/react.png',
+            iconSrc: 'assets/img/skills-icons/react_b.png',
         },
         {
             title: 'Next.js',
-            iconSrc: 'assets/img/next.png',
+            iconSrc: 'assets/img/skills-icons/next_b.png',
         },
         {
             title: 'Bootstrap',
-            iconSrc: 'assets/img/bootstrap.png',
+            iconSrc: 'assets/img/skills-icons/bootstrap_b.png',
         },
         {
             title: 'Adobe Photoshop',
-            iconSrc: 'assets/img/ps.png',
+            iconSrc: 'assets/img/skills-icons/ps_b.png',
         },
         {
             title: 'Adobe Illustrator',
-            iconSrc: 'assets/img/ai.png',
+            iconSrc: 'assets/img/skills-icons/ai_b.png',
         },
         {
             title: 'Adobe InDesign',
-            iconSrc: 'assets/img/id.png',
+            iconSrc: 'assets/img/skills-icons/id_b.png',
         },
     ];
 
@@ -56,7 +56,7 @@ const Resume = () => {
             place: 'Udemy, Inc.',
         },
         {
-            title: 'Programmazione Web',
+            title: 'Sviluppo Web',
             date: '2020 - 2021',
             place: 'Studio Autonomo',
         },
@@ -76,7 +76,7 @@ const Resume = () => {
         {
             title: 'Tirocinante Frontend Developer',
             date: '10/2022 - 03/2023',
-            place: 'Azienda Softfobia, Cagliari<',
+            place: 'Azienda Softfobia, Cagliari',
         },
         {
             title: 'Graphic Designer',
@@ -89,7 +89,7 @@ const Resume = () => {
             place: 'Studio Autonomo',
         },
         {
-            title: 'Cassiera/Cameriera',
+            title: 'Cassiera e Cameriera',
             date: 'Estate 2017',
             place: 'Eurasia, Cagliari',
         },
@@ -110,7 +110,7 @@ const Resume = () => {
                             </h6>
                             <h3>
                                 <span>
-                                    Skills, Educazione e <br />
+                                    Skills, <br /> Educazione e <br />
                                     Esperienze Lavorativa
                                 </span>
                             </h3>
@@ -137,10 +137,6 @@ const Resume = () => {
                                                     <img
                                                         src={val.iconSrc}
                                                         alt=''
-                                                        style={{
-                                                            width: '30px',
-                                                            paddingTop: '2px',
-                                                        }}
                                                     />
                                                 </div>
                                                 <h6>{val.title}</h6>

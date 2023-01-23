@@ -209,14 +209,17 @@ const Portfolio = () => {
                         className='px-btn filter-button'
                         onClick={() => setFilter('dev')}
                     >
-                        Programmazione Web
+                        Web Development
                     </a>
                 </div>
 
                 <div className='row g-4 lightbox-gallery'>
                     {filteredData().map((val, key) => {
                         return (
-                            <div className='col-sm-6 col-lg-4' key={key}>
+                            <div
+                                className='col-sm-6 col-lg-4 projects-container'
+                                key={key}
+                            >
                                 <div className='portfolio-box'>
                                     <div className='portfolio-img'>
                                         <a
