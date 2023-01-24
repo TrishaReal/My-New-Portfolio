@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Contact = () => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const [valid, setValid] = useState(false);
+    const [emailSent, setEmailSent] = useState(false);
+
+    const nameRegex = /^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$/;
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
     const contactData = [
         {
             title: 'Phone',
@@ -19,11 +30,34 @@ const Contact = () => {
         },
     ];
 
+    useEffect(() => {
+        if (
+            firstName.length > 1 &&
+            nameRegex.test(firstName) &&
+            lastName.length > 1 &&
+            nameRegex.test(lastName) &&
+            emailRegex.test(email) &&
+            message.length > 0
+        ) {
+            setValid(true);
+        } else setValid(false);
+    }, [firstName, lastName, email, message]);
+
+    //   const clean = () => {
+    //     setFirstName("");
+    //     setLastName("");
+    //     setEmail("");
+    //     setMessage("");
+    //   };
+
+    //   const sendEmail = () => {
+    //     setValid(true);
+
     return (
         <section
             data-scroll-index='4'
             id='contact'
-            className='section contactus-section gradient-top '
+            className='section contact-section gradient-top '
         >
             <div className='container'>
                 <div className='row section-heading'>
@@ -38,82 +72,122 @@ const Contact = () => {
                 </div>
                 <div className='row'>
                     <div className='col-lg-6'>
-                        <div className='contact-form'>
-                            <h6>Inviami un'email</h6>
-                            <p className='lead'>testo</p>
-                            <form id='contact-form' method='POST'>
-                                <div className='row gx-3 gy-4'>
-                                    <div className='col-md-6'>
-                                        <div className='form-group'>
-                                            <label className='form-label'>
-                                                Nome
-                                            </label>
-                                            <input
-                                                name='Name'
-                                                id='name'
-                                                placeholder='Nome *'
-                                                className='form-control'
-                                                type='text'
-                                            />
+                        {!emailSent && (
+                            <div className='contact-form'>
+                                <h6>Inviami un'email</h6>
+
+                                {!nameRegex.test(firstName) ||
+                                firstName.length < 2 ||
+                                !nameRegex.test(lastName) ||
+                                lastName.length < 2 ||
+                                !emailRegex.test(email) ||
+                                message.length < 1 ? (
+                                    <p className='lead pb-3'>
+                                        Si prega di compilare tutti i campi. *
+                                    </p>
+                                ) : (
+                                    <p
+                                        className='lead pb-3 ready-submit'
+                                        style={{ color: '#5C64CF' }}
+                                    >
+                                        Pronto all'invio!&nbsp;&nbsp;✔
+                                    </p>
+                                )}
+                                <form id='contact-form' method='POST'>
+                                    <div className='row gx-3 gy-4'>
+                                        <div className='col-md-6'>
+                                            <div className='form-group'>
+                                                <input
+                                                    autoComplete='off'
+                                                    id='name'
+                                                    placeholder='Nome *'
+                                                    className='form-control'
+                                                    type='text'
+                                                    onChange={(e) =>
+                                                        setFirstName(
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='col-md-6'>
+                                            <div className='form-group'>
+                                                <input
+                                                    autoComplete='off'
+                                                    onChange={(e) =>
+                                                        setLastName(
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                    id='name'
+                                                    placeholder='Cognome *'
+                                                    className='form-control'
+                                                    type='text'
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='col-12'>
+                                            <div className='form-group'>
+                                                <input
+                                                    id='email'
+                                                    placeholder='Email *'
+                                                    className='form-control'
+                                                    type='email'
+                                                    autoComplete='off'
+                                                    aria-required='true'
+                                                    aria-invalid={
+                                                        !emailRegex.test(
+                                                            email
+                                                        ) && email.length > 2
+                                                            ? 'true'
+                                                            : 'false'
+                                                    }
+                                                    onChange={(e) =>
+                                                        setEmail(e.target.value)
+                                                    }
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='col-md-12'>
+                                            <div className='form-group'>
+                                                <textarea
+                                                    id='message'
+                                                    placeholder='Scrivi un messaggio *'
+                                                    rows='4'
+                                                    className='form-control'
+                                                    autoComplete='off'
+                                                    onChange={(e) =>
+                                                        setMessage(
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                ></textarea>
+                                            </div>
+                                        </div>
+                                        <div className='col-md-12'>
+                                            {!valid && (
+                                                <div className='send'>
+                                                    <button
+                                                        className='px-btn btn-disabled'
+                                                        disabled
+                                                    >
+                                                        Invia
+                                                    </button>
+                                                </div>
+                                            )}
+                                            {valid && (
+                                                <div className='send'>
+                                                    <button className='px-btn px-btn-theme2'>
+                                                        Invia
+                                                    </button>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
-                                    <div className='col-md-6'>
-                                        <div className='form-group'>
-                                            <label className='form-label'>
-                                                Cognome
-                                            </label>
-                                            <input
-                                                name='Name'
-                                                id='name'
-                                                placeholder='Cognome *'
-                                                className='form-control'
-                                                type='text'
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className='col-12'>
-                                        <div className='form-group'>
-                                            <label className='form-label'>
-                                                Email
-                                            </label>
-                                            <input
-                                                name='Email'
-                                                id='email'
-                                                placeholder='Email *'
-                                                className='form-control'
-                                                type='email'
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className='col-md-12'>
-                                        <div className='form-group'>
-                                            <label className='form-label'>
-                                                Il tuo messaggio
-                                            </label>
-                                            <textarea
-                                                name='message'
-                                                id='message'
-                                                placeholder='Scrivi un messaggio *'
-                                                rows='4'
-                                                className='form-control'
-                                            ></textarea>
-                                        </div>
-                                    </div>
-                                    <div className='col-md-12'>
-                                        <div className='send'>
-                                            <button
-                                                className='px-btn px-btn-theme2'
-                                                type='button'
-                                                value='Send'
-                                            >
-                                                {' '}
-                                                Send Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                                </form>
+                            </div>
+                        )}
                     </div>
                     <div className='col-lg-5 ms-auto col-xl-4 pt-5 pt-lg-0'>
                         <ul className='contact-infos'>

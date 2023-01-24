@@ -1,7 +1,8 @@
-import React from 'react';
-import Languages from './Languages';
+import React, { useState } from 'react';
 
 const Navbar = () => {
+    const [activeMenuItem, setActiveMenuItem] = useState('');
+
     const menuData = [
         {
             title: 'Home',
@@ -30,7 +31,7 @@ const Navbar = () => {
             <nav className='navbar header-nav navbar-expand-lg one-page-nav'>
                 <div className='container'>
                     {/* <Languages /> */}
-                    <a class='navbar-brand' href='#'>
+                    <a className='navbar-brand' href='#'>
                         <img
                             src='assets/img/logo/logo02.png'
                             title='Trisha Sairene Real'
@@ -61,7 +62,14 @@ const Navbar = () => {
                                 return (
                                     <li key={key}>
                                         <a
-                                            className='nav-link'
+                                            className={`nav-link ${
+                                                activeMenuItem == val.link
+                                                    ? 'color-active'
+                                                    : ''
+                                            }`}
+                                            onClick={() =>
+                                                setActiveMenuItem(val.link)
+                                            }
                                             data-scroll-nav={val.dataScroll}
                                             href={val.link}
                                             title={val.title}

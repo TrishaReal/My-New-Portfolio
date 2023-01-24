@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
     const [filter, setFilter] = useState(null);
@@ -194,19 +195,30 @@ const Portfolio = () => {
                 </div>
                 <div className='button-filter-project d-flex mb-5 justify-content-center'>
                     <a
-                        className='px-btn filter-button'
-                        onClick={() => setFilter(null)}
+                        id={'0'}
+                        className={`px-btn filter-button ${
+                            filter == null ? 'color-active' : ''
+                        }`}
+                        onClick={() => {
+                            setFilter(null);
+                        }}
                     >
                         Tutti
                     </a>
                     <a
-                        className='px-btn filter-button'
+                        id={'1'}
+                        className={`px-btn filter-button ${
+                            filter == 'graphic' ? 'color-active' : ''
+                        }`}
                         onClick={() => setFilter('graphic')}
                     >
                         Graphic Design
                     </a>
                     <a
-                        className='px-btn filter-button'
+                        id={'2'}
+                        className={`px-btn filter-button ${
+                            filter == 'dev' ? 'color-active' : ''
+                        }`}
                         onClick={() => setFilter('dev')}
                     >
                         Web Development

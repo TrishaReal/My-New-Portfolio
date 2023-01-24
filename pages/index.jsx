@@ -5,7 +5,7 @@ import Contact from './Sections/Contact';
 
 const AppIndex = () => {
     return (
-        <main class='wrapper'>
+        <main className='wrapper'>
             <Home />
 
             <Skills />

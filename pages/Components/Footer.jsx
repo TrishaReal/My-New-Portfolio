@@ -11,7 +11,7 @@ const Footer = () => {
                                 target='_blank'
                                 href='https://github.com/TrishaReal'
                             >
-                                <i class='fab fa-github'></i>
+                                <i className='fab fa-github'></i>
                             </a>
                             <a
                                 target='_blank'
@@ -23,7 +23,7 @@ const Footer = () => {
                                 target='_blank'
                                 href='https://www.behance.net/trishasairenereal'
                             >
-                                <i class='fab fa-behance'></i>
+                                <i className='fab fa-behance'></i>
                             </a>
                         </div>
                     </div>

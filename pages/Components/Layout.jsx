@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
                 <link
                     rel='shortcut icon'
                     type='image/x-icon'
-                    href='favicon.ico'
+                    href='assets/img/logo/logo02.png'
                 />
 
                 <link rel='preconnect' href='https://fonts.googleapis.com' />

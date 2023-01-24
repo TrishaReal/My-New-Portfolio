@@ -164,7 +164,7 @@ const Resume = () => {
                                 })}
                             </ul>
                         </div>
-                        <div className='experience-box'>
+                        <div className='experience-box mt-5'>
                             <h3>Esperienza Lavorativa</h3>
                             <ul>
                                 {experienceData.map((val, key) => {
@@ -180,32 +180,30 @@ const Resume = () => {
                                 })}
                             </ul>
                         </div>
-                        <div className='experience-user'>
-                            <span className='eu-1'>
-                                <img
-                                    src='assets/img/effect-3.svg'
-                                    title=''
-                                    alt=''
-                                />
-                            </span>
-                            <span className='eu-2'>
-                                <img
-                                    src='assets/img/effect-4.svg'
-                                    title=''
-                                    alt=''
-                                />
-                            </span>
-                            <div className='avatar'>
-                                <img
-                                    src='assets/img/me02.jpeg'
-                                    title=''
-                                    alt=''
-                                />
-                            </div>
-                            <a className='px-btn px-btn-theme2' href='#contact'>
-                                Hire me
-                            </a>
+                    </div>
+                    <div className='experience-user '>
+                        <span className='eu-1'>
+                            <img
+                                src='assets/img/effect-3.svg'
+                                title=''
+                                alt=''
+                            />
+                        </span>
+                        <span className='eu-2'>
+                            <img
+                                src='assets/img/effect-4.svg'
+                                title=''
+                                alt=''
+                            />
+                        </span>
+
+                        <div></div>
+                        <div className='avatar'>
+                            <img src='assets/img/mePng.png' title='' alt='' />
                         </div>
+                        <a className='px-btn px-btn-theme2 ' href='#contact'>
+                            Progetti in <span>mente?</span>
+                        </a>
                     </div>
                 </div>
             </div>
