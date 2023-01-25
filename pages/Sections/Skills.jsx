@@ -180,30 +180,21 @@ const Resume = () => {
                                 })}
                             </ul>
                         </div>
-                    </div>
-                    <div className='experience-user '>
-                        <span className='eu-1'>
-                            <img
-                                src='assets/img/effect-3.svg'
-                                title=''
-                                alt=''
-                            />
-                        </span>
-                        <span className='eu-2'>
-                            <img
-                                src='assets/img/effect-4.svg'
-                                title=''
-                                alt=''
-                            />
-                        </span>
-
-                        <div></div>
-                        <div className='avatar'>
-                            <img src='assets/img/mePng.png' title='' alt='' />
+                        <div className='experience-user '>
+                            <a className='avatar' href='#contact'>
+                                <img
+                                    src='assets/img/mePng.png'
+                                    title=''
+                                    alt=''
+                                />
+                            </a>
+                            <a
+                                href='#contact'
+                                className='px-btn px-btn-theme2 '
+                            >
+                                Progetti in <span>mente?</span>
+                            </a>
                         </div>
-                        <a className='px-btn px-btn-theme2 ' href='#contact'>
-                            Progetti in <span>mente?</span>
-                        </a>
                     </div>
                 </div>
             </div>

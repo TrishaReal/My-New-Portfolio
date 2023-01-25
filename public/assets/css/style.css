@@ -17,8 +17,17 @@
     --input-color: hsl(var(--hue-color), 70%, 96%);
     --body-color: #ffff;
     --container-color: #fff;
-
     --border-radius: 10px;
+}
+
+::-moz-selection {
+    background-color: #f7b1245c;
+    color: #5c64cf;
+}
+
+::selection {
+    background-color: #f7b1245c;
+    color: #5c64cf;
 }
 
 /* ------------------------------------------------------------------- */
@@ -122,6 +131,30 @@
     }
 }
 
+.go-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #5c64cf8e;
+    border: 2px #000 solid !important;
+    cursor: pointer;
+    position: fixed;
+    border: none;
+    border-radius: 100%;
+    bottom: 50px;
+    right: 50px;
+    z-index: 9;
+}
+
+@media (max-width: 425px) {
+    .go-top {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 /* ------------------------------------------------------------------- */
 /*========== LANGUAGE ==========*/
 
@@ -191,6 +224,7 @@
     border-color: #18171c8b;
     color: #18171c8b;
     border-radius: 10px;
+    cursor: not-allowed;
 }
 
 .px-btn.px-btn-theme2 {
@@ -200,9 +234,8 @@
 }
 
 .px-btn-theme2:hover {
-    background: #18171c !important;
+    background: #5c64cf !important;
     border-color: #18171c;
-    color: #fff;
 }
 
 .px-btn-theme2,
@@ -687,7 +720,6 @@ main {
 }
 
 .experience-user {
-    margin-top: 70px;
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -697,9 +729,7 @@ main {
     justify-content: center;
     -ms-flex-align: center;
     align-items: center;
-    position: relative;
-    top: 0;
-    left: 0;
+    top: 100px;
 }
 
 .experience-user .eu-1,
@@ -708,26 +738,20 @@ main {
     left: 0;
     top: 25%;
 }
-.experience-user .eu-2,
-.experience-user .eu-2-2 {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
 
 .experience-user .avatar {
     width: 210px;
     height: 210px;
     position: relative;
-    top: 0;
-    left: 30px;
-    z-index: 999999;
+    top: -58px;
+    left: 20px;
+    z-index: 999;
 }
 
 .experience-user .px-btn-theme2 {
     position: absolute;
-    bottom: -57px;
-    width: 340px;
+    bottom: 0;
+    width: 310px;
     text-align: start;
     cursor: pointer;
     font-size: 20px;
@@ -783,6 +807,7 @@ main {
     .experience-user {
         display: flex;
         justify-content: center;
+        top: 10px;
     }
 
     .experience-user .avatar {
@@ -813,10 +838,10 @@ main {
     .feature-box-02 h6 {
         font-size: 12px;
     }
-
     .experience-user {
         display: flex;
         justify-content: center;
+        top: 10px;
     }
 
     .experience-user .avatar {
@@ -831,6 +856,14 @@ main {
         bottom: -55px;
         width: 295px;
         font-size: 18px;
+    }
+}
+
+@media (min-width: 427px) and (max-width: 800px) {
+    .experience-user {
+        display: flex;
+        justify-content: center;
+        top: 50px;
     }
 }
 
@@ -865,6 +898,11 @@ main {
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+.color-active,
+.button-filter-project a:hover {
+    background: #18171c !important;
 }
 
 .portfolio-box {

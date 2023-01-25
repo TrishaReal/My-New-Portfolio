@@ -9,7 +9,7 @@ const Portfolio = () => {
             img: 'assets/img/dev/pickme.png',
             title: 'Pick-Me NFT Website',
             subtitle: 'React JS & Redux Toolkit (responsive)',
-            github: 'https://github.com/TrishaReal/PickMe-REDUX',
+            iconLink: 'https://github.com/TrishaReal/PickMe-REDUX',
             icon: 'fab fa-github',
             category: 'dev',
         },
@@ -67,7 +67,7 @@ const Portfolio = () => {
             img: 'assets/img/dev/todolist.png',
             title: 'To Do List',
             subtitle: 'HTML, CSS & JS (responsive)',
-            github: 'https://github.com/TrishaReal/Simple-ToDoList',
+            iconLink: 'https://github.com/TrishaReal/Simple-ToDoList',
             imgLink: 'https://my-first-to-do-list.netlify.app/',
             message: 'Apri il DEMO',
             icon: 'fab fa-github',
@@ -180,10 +180,10 @@ const Portfolio = () => {
         <section
             id='projects'
             data-scroll-index='3'
-            className='section work-section gradient-center'
+            className=' work-section gradient-center'
         >
             <div className='container'>
-                <div className='row section-heading'>
+                <div className='section  row section-heading'>
                     <div className='col-lg-6'>
                         <h6>
                             <span>Portfolio</span>

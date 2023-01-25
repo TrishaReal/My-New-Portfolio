@@ -60,9 +60,9 @@ const Contact = () => {
             type: 'greetings',
             subject: 'Grazie per avermi contatta!',
             preheader: 'Grazie per avermi contatta!',
-            greetings: `Gentile ${Name} ${lastName},`,
+            greetings: `Gentile  <strong>${Name} ${lastName}</strong>,`,
             message:
-                'Grazie per avermi contatta! Esaminerò la tua richiesta e ti contatterò il prima possibile. <br> Nel frattempo seguimi su <b>LinkedIn</b>!',
+                'Grazie per avermi contatta! <br> Esaminerò la tua richiesta e ti contatterò il prima possibile. <br> Nel frattempo seguimi su <b>LinkedIn</b> per altre informazioni!',
             callToAction: {
                 name: 'Seguimi su LinkedIn',
                 href: 'https://www.linkedin.com/in/graphic-web-trisha',
@@ -96,8 +96,8 @@ const Contact = () => {
                 href: 'https://trishasairenereal.app',
                 active: false,
             },
-            conclusion: `Rispondi e contatta <strong>${Name}</strong> all'email: <strong>${email}</strong>.<br />`,
-            thanks: 'Cheers!',
+            conclusion: `Rispondi e contatta <strong>${Name}</strong> all'email: <strong>${email}</strong>.`,
+            thanks: 'Grandioso!',
             unsubscribe: {
                 name: "Annulla l'iscrizione",
                 href: 'http://localhost:3000/',
@@ -165,7 +165,7 @@ const Contact = () => {
                                 !emailRegex.test(email) ||
                                 message.length < 1 ? (
                                     <p className='lead pb-3'>
-                                        Si prega di compilare tutti i campi. *
+                                        Compilare tutti i campi, per favore.*
                                     </p>
                                 ) : (
                                     <p

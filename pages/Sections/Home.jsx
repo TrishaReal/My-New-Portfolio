@@ -19,6 +19,9 @@ const Home = () => {
                             </h6>
                             <h2 className='mb-4'>Ciao! mi chiamo</h2>
                             <h1>Trisha Sairene Real</h1>
+                            <h4 className='mb-4 ' style={{ color: '#000' }}>
+                                Frontend Developer
+                            </h4>
                             <p>
                                 Sono una persona intraprendente con grande
                                 volontà di fare nuove esperienze. Socievole,

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import Footer from './Footer';
+import GoTop from './GoTop';
 import Navbar from './Navbar';
 import Scripts from './Scripts';
 
@@ -53,6 +54,7 @@ const Layout = ({ children }) => {
             {children}
 
             <Footer />
+            <GoTop />
 
             <Scripts />
         </>
