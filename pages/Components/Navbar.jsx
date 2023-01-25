@@ -64,7 +64,7 @@ const Navbar = () => {
                                         <a
                                             className={`nav-link ${
                                                 activeMenuItem == val.link
-                                                    ? 'color-active'
+                                                    ? 'active'
                                                     : ''
                                             }`}
                                             onClick={() =>

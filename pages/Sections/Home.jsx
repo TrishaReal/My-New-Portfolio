@@ -31,9 +31,10 @@ const Home = () => {
                                 <a
                                     className='px-btn px-btn-theme'
                                     data-scroll-nav='4'
-                                    href='#contact'
+                                    href='assets/CV_TrishaSaireneReal.pdf'
+                                    download='CV_TrishaSaireneReal'
                                 >
-                                    Collaboriamo!
+                                    Scarica CV
                                 </a>
                             </div>
                         </div>

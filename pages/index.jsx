@@ -7,7 +7,6 @@ const AppIndex = () => {
     return (
         <main className='wrapper'>
             <Home />
-
             <Skills />
             <Portfolio />
             <Contact />

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
-    const [firstName, setFirstName] = useState('');
+    const [Name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -32,8 +34,8 @@ const Contact = () => {
 
     useEffect(() => {
         if (
-            firstName.length > 1 &&
-            nameRegex.test(firstName) &&
+            Name.length > 1 &&
+            nameRegex.test(Name) &&
             lastName.length > 1 &&
             nameRegex.test(lastName) &&
             emailRegex.test(email) &&
@@ -41,17 +43,97 @@ const Contact = () => {
         ) {
             setValid(true);
         } else setValid(false);
-    }, [firstName, lastName, email, message]);
+    }, [Name, lastName, email, message]);
 
-    //   const clean = () => {
-    //     setFirstName("");
-    //     setLastName("");
-    //     setEmail("");
-    //     setMessage("");
-    //   };
+    const clean = () => {
+        setName('');
+        setLastName('');
+        setEmail('');
+        setMessage('');
+    };
 
-    //   const sendEmail = () => {
-    //     setValid(true);
+    const sendEmail = () => {
+        setEmailSent(true);
+
+        const greetingsEmail = {
+            from: email,
+            type: 'greetings',
+            subject: 'Grazie per avermi contatta!',
+            preheader: 'Grazie per avermi contatta!',
+            greetings: `Gentile ${Name} ${lastName},`,
+            message:
+                'Grazie per avermi contatta! Esaminerò la tua richiesta e ti contatterò il prima possibile. <br> Nel frattempo seguimi su <b>LinkedIn</b>!',
+            callToAction: {
+                name: 'Seguimi su LinkedIn',
+                href: 'https://www.linkedin.com/in/graphic-web-trisha',
+                active: true,
+            },
+            conclusion: '',
+            thanks: '',
+            unsubscribe: {
+                name: "Annulla l'iscrizione",
+                href: 'http://localhost:3000/',
+                message: 'Email invadenti?',
+                active: false,
+            },
+            footer: {
+                name: '© 2023, Offerta da',
+                href: 'www.trishasairenereal.app',
+                message: 'trishasairenereal.app',
+                active: true,
+            },
+        };
+
+        const summaryEmail = {
+            from: email,
+            type: 'summary',
+            subject: 'Congratulazioni Trisha, hai ricevuto una richiesta!',
+            preheader: 'Congratulazioni Trisha, hai ricevuto una richiesta!',
+            greetings: `Ciao Trisha, <strong>${Name} ${lastName}</strong> ti ha inviato un messaggio:`,
+            message: `<i>${message}</i>`,
+            callToAction: {
+                name: '',
+                href: 'https://trishasairenereal.app',
+                active: false,
+            },
+            conclusion: `Rispondi e contatta <strong>${Name}</strong> all'email: <strong>${email}</strong>.<br />`,
+            thanks: 'Cheers!',
+            unsubscribe: {
+                name: "Annulla l'iscrizione",
+                href: 'http://localhost:3000/',
+                message: 'Email invadenti?',
+                active: false,
+            },
+            footer: {
+                name: '© 2023, Offerta da',
+                href: 'www.trihasairenereal.app',
+                message: 'trishasairenereal.app',
+                active: true,
+            },
+        };
+
+        const emails = { data: [greetingsEmail, summaryEmail] };
+
+        fetch('/api/email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(emails),
+        })
+            .then((response) => response.json())
+            .then(() => {
+                setEmailSent(true);
+                clean();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                toast.error(
+                    JSON.stringify(
+                        'Oh no! Qualquadra non cosa, ti prego di riprovare.'
+                    )
+                );
+                clean();
+            });
+    };
 
     return (
         <section
@@ -76,8 +158,8 @@ const Contact = () => {
                             <div className='contact-form'>
                                 <h6>Inviami un'email</h6>
 
-                                {!nameRegex.test(firstName) ||
-                                firstName.length < 2 ||
+                                {!nameRegex.test(Name) ||
+                                Name.length < 2 ||
                                 !nameRegex.test(lastName) ||
                                 lastName.length < 2 ||
                                 !emailRegex.test(email) ||
@@ -88,7 +170,7 @@ const Contact = () => {
                                 ) : (
                                     <p
                                         className='lead pb-3 ready-submit'
-                                        style={{ color: '#5C64CF' }}
+                                        style={{ color: 'green' }}
                                     >
                                         Pronto all'invio!&nbsp;&nbsp;✔
                                     </p>
@@ -104,9 +186,7 @@ const Contact = () => {
                                                     className='form-control'
                                                     type='text'
                                                     onChange={(e) =>
-                                                        setFirstName(
-                                                            e.target.value
-                                                        )
+                                                        setName(e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -131,7 +211,7 @@ const Contact = () => {
                                             <div className='form-group'>
                                                 <input
                                                     id='email'
-                                                    placeholder='Email *'
+                                                    placeholder='La tua email *'
                                                     className='form-control'
                                                     type='email'
                                                     autoComplete='off'
@@ -177,7 +257,10 @@ const Contact = () => {
                                                 </div>
                                             )}
                                             {valid && (
-                                                <div className='send'>
+                                                <div
+                                                    className='send'
+                                                    onClick={() => sendEmail()}
+                                                >
                                                     <button className='px-btn px-btn-theme2'>
                                                         Invia
                                                     </button>
@@ -186,6 +269,22 @@ const Contact = () => {
                                         </div>
                                     </div>
                                 </form>
+                            </div>
+                        )}
+                        {emailSent && (
+                            <div className='contact-form'>
+                                <div className='message-confirmed col-md-12'>
+                                    <h2>
+                                        Grazie per il tuo messaggio! <br />
+                                        Presto ti invierò una risposta.
+                                    </h2>
+                                    <div className='confirm-icon'>
+                                        <img
+                                            src='assets/img/confirm.svg'
+                                            alt='confirm feedback image'
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -210,6 +309,8 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
+
+                <Toaster position='top-right' reverseOrder={false} />
             </div>
         </section>
     );
