@@ -52,13 +52,7 @@ const Contact = () => {
         setMessage('');
     };
 
-    const handleClick = () => {
-        setEmailSent(!emailSent);
-    };
-
     const sendEmail = () => {
-        setEmailSent(true);
-
         const greetingsEmail = {
             from: email,
             type: 'greetings',
@@ -291,7 +285,7 @@ const Contact = () => {
                                 </div>
                                 <div
                                     className='back-to-form col-md-12'
-                                    onClick={() => handleClick()}
+                                    onClick={() => setEmailSent(false)}
                                 >
                                     <img
                                         src='assets/img/back-arrow.svg'
