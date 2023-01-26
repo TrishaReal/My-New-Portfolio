@@ -21,8 +21,8 @@ const fillTemplate = (data) => {
         },
         footer: {
             name: '© 2023, Offerta da',
-            href: 'www.trihasairenereal.app',
-            message: 'trishasairenereal.app',
+            href: 'https://trishasairenereal.vercel.app/',
+            message: 'trishasairenereal.vercel.app',
             active: true,
         },
     };

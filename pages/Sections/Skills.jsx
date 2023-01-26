@@ -192,7 +192,7 @@ const Resume = () => {
                                 href='#contact'
                                 className='px-btn px-btn-theme2 '
                             >
-                                Progetti in <span>mente?</span>
+                                Progetti in mente?
                             </a>
                         </div>
                     </div>

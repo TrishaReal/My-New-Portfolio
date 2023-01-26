@@ -183,7 +183,7 @@ const Portfolio = () => {
             className=' work-section gradient-center'
         >
             <div className='container'>
-                <div className='section  row section-heading'>
+                <div className='section  row section-heading project-heading'>
                     <div className='col-lg-6'>
                         <h6>
                             <span>Portfolio</span>

@@ -744,20 +744,21 @@ main {
     height: 210px;
     position: relative;
     top: -58px;
-    left: 20px;
+    left: 70px;
     z-index: 999;
 }
 
 .experience-user .px-btn-theme2 {
     position: absolute;
     bottom: 0;
-    width: 310px;
+    width: 360px;
     text-align: start;
     cursor: pointer;
     font-size: 20px;
     display: flex;
     justify-content: space-between;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.555);
+    padding-left: 20px;
 }
 
 /* .experience-user .avatar {
@@ -815,7 +816,7 @@ main {
         height: 160px;
         position: relative;
         top: 0;
-        left: 20px;
+        left: 50px;
     }
 
     .experience-user .px-btn-theme2 {
@@ -849,12 +850,12 @@ main {
         height: 190px;
         position: relative;
         top: 0;
-        left: 20px;
+        left: 60px;
     }
 
     .experience-user .px-btn-theme2 {
         bottom: -55px;
-        width: 295px;
+        width: 325px;
         font-size: 18px;
     }
 }
@@ -1040,6 +1041,15 @@ main {
 @media (min-width: 320px) and (max-width: 425px) {
     .button-filter-project .filter-button {
         font-size: 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    .experience-section {
+        padding-bottom: 0;
+    }
+    .project-heading {
+        padding-top: 0px;
     }
 }
 

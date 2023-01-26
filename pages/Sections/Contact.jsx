@@ -52,6 +52,10 @@ const Contact = () => {
         setMessage('');
     };
 
+    const handleClick = () => {
+        setEmailSent(!emailSent);
+    };
+
     const sendEmail = () => {
         setEmailSent(true);
 
@@ -78,8 +82,8 @@ const Contact = () => {
             },
             footer: {
                 name: '© 2023, Offerta da',
-                href: 'www.trishasairenereal.app',
-                message: 'trishasairenereal.app',
+                href: 'https://trishasairenereal.vercel.app/',
+                message: 'trishasairenereal.vercel.app',
                 active: true,
             },
         };
@@ -93,7 +97,7 @@ const Contact = () => {
             message: `<i>${message}</i>`,
             callToAction: {
                 name: '',
-                href: 'https://trishasairenereal.app',
+                href: 'https://trishasairenereal.vercel.app/',
                 active: false,
             },
             conclusion: `Rispondi e contatta <strong>${Name}</strong> all'email: <strong>${email}</strong>.`,
@@ -106,8 +110,8 @@ const Contact = () => {
             },
             footer: {
                 name: '© 2023, Offerta da',
-                href: 'www.trihasairenereal.app',
-                message: 'trishasairenereal.app',
+                href: 'https://trishasairenereal.vercel.app/',
+                message: 'trishasairenereal.vercel.app',
                 active: true,
             },
         };
@@ -285,7 +289,10 @@ const Contact = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className='back-to-form col-md-12'>
+                                <div
+                                    className='back-to-form col-md-12'
+                                    onClick={() => handleClick()}
+                                >
                                     <img
                                         src='assets/img/back-arrow.svg'
                                         alt=''
