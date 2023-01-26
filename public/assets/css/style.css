@@ -1137,7 +1137,7 @@ main {
 .contact-form .message-confirmed {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -1148,6 +1148,30 @@ main {
 .contact-form .message-confirmed .confirm-icon img {
     width: 130px;
     height: auto;
+}
+
+.back-to-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.back-to-form :hover {
+    color: #f7af24;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.back-to-form p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.back-to-form img {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
 }
 
 @media (max-width: 767px) {
@@ -1169,5 +1193,16 @@ main {
 
     .contact-infos p {
         font-size: 15px;
+    }
+
+    .back-to-form p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .back-to-form img {
+        width: 15px;
+        height: 15px;
+        margin-right: 7px;
     }
 }

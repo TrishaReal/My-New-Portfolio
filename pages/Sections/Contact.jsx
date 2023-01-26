@@ -62,7 +62,7 @@ const Contact = () => {
             preheader: 'Grazie per avermi contatta!',
             greetings: `Gentile  <strong>${Name} ${lastName}</strong>,`,
             message:
-                'Grazie per avermi contatta! <br> Esaminerò la tua richiesta e ti contatterò il prima possibile. <br> Nel frattempo seguimi su <b>LinkedIn</b> per altre informazioni!',
+                'Grazie per avermi contatta! <br> Esaminerò la tua richiesta e ti contatterò il prima possibile. <br> Nel frattempo seguimi su <b>LinkedIn</b> per altre informazioni. <br> <br> Cordiali Saluti, <br> Trisha.  ',
             callToAction: {
                 name: 'Seguimi su LinkedIn',
                 href: 'https://www.linkedin.com/in/graphic-web-trisha',
@@ -97,7 +97,7 @@ const Contact = () => {
                 active: false,
             },
             conclusion: `Rispondi e contatta <strong>${Name}</strong> all'email: <strong>${email}</strong>.`,
-            thanks: 'Grandioso!',
+            thanks: 'Buon Lavoro!',
             unsubscribe: {
                 name: "Annulla l'iscrizione",
                 href: 'http://localhost:3000/',
@@ -284,6 +284,13 @@ const Contact = () => {
                                             alt='confirm feedback image'
                                         />
                                     </div>
+                                </div>
+                                <div className='back-to-form col-md-12'>
+                                    <img
+                                        src='assets/img/back-arrow.svg'
+                                        alt=''
+                                    />
+                                    <p>Torna al form iniziale</p>
                                 </div>
                             </div>
                         )}
