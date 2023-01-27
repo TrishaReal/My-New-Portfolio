@@ -18,12 +18,12 @@ const Contact = () => {
         {
             title: 'Phone',
             info: '(+39) 327 407 3331',
-            icon: 'fas fa-envelope',
+            icon: 'fas fa-phone-alt',
         },
         {
             title: 'Email',
             info: 'trishasairenereal@gmail.com',
-            icon: 'fas fa-phone-alt',
+            icon: 'fas fa-envelope',
         },
         {
             title: 'Location',
@@ -53,6 +53,7 @@ const Contact = () => {
     };
 
     const sendEmail = () => {
+        setEmailSent(true);
         const greetingsEmail = {
             from: email,
             type: 'greetings',
@@ -114,7 +115,9 @@ const Contact = () => {
 
         fetch('/api/email', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(emails),
         })
             .then((response) => response.json())
@@ -126,7 +129,7 @@ const Contact = () => {
                 console.error('Error:', error);
                 toast.error(
                     JSON.stringify(
-                        'Oh no! Qualquadra non cosa, ti prego di riprovare.'
+                        "Oh no! C'è Qualquadra che non cosa! Riprova."
                     )
                 );
                 clean();
